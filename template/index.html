@@ -1,0 +1,262 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mushroom Classification</title>
+        <link rel="stylesheet" href="../static/styles/style.css">
+    </head>
+    <body>
+        <center>
+
+        <h1 style="font-size:40px; color:rgb(151, 35, 151);">Mushroom Classification</h1>
+        <h4 style="font-size:20px;margin-left: 20px;">This web application is made for Mushroom Classification</h4>
+        <p style="font-size:20px;">Fill the form and get your results</p>
+
+
+        <form method='POST', action="{{url_for('prediction')}}">
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 12px; margin: 10px 10px 17px 4px;">cap_shape</label>
+            <select class="text" name="cap_shape" style="padding: 4px 6px; font-size:15 ;">
+                <option value="text">select</option>
+                <option value="5">x</option>
+                <option value="4">s</option>
+                <option value="3">k</option>
+                <option value="2">f</option>
+                <option value="1">c</option>
+                <option value="0">b</option>
+            </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">cap_surface</label>
+            <select class="text" name="cap_surface" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="3">y</option>
+                <option value="2">s</option>
+                <option value="1">g</option>
+                <option value="0">f</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">cap_color</label>
+            <select class="text" name="cap_color" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="9">y</option>
+                <option value="8">w</option>
+                <option value="7">u</option>
+                <option value="6">r</option>
+                <option value="5">p</option>
+                <option value="4">n</option>
+                <option value="3">g</option>
+                <option value="2">e</option>
+                <option value="1">c</option>
+                <option value="0">b</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">bruises</label>
+            <select class="text" name="bruises" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="1">t</option>
+                <option value="0">f</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">odor</label>
+            <select class="text" name="odor" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="8">y</option>
+                <option value="7">s</option>
+                <option value="6">p</option>
+                <option value="5">n</option>
+                <option value="4">m</option>
+                <option value="3">l</option>
+                <option value="2">f</option>
+                <option value="1">c</option>
+                <option value="0">a</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">gill_attachment</label>
+            <select class="text" name="gill_attachment" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="1">f</option>
+                <option value="0">a</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">gill_spacing</label>
+            <select class="text" name="gill_spacing" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="1">w</option>
+                <option value="0">c</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">gill_size</label>
+            <select class="text" name="gill_size" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="1">n</option>
+                <option value="0">b</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">gill_color</label>
+            <select class="text" name="gill_color" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="11">y</option>
+                <option value="10">w</option>
+                <option value="9">u</option>
+                <option value="8">r</option>
+                <option value="7">p</option>
+                <option value="6">o</option>
+                <option value="5">n</option>
+                <option value="4">k</option>
+                <option value="3">h</option>
+                <option value="2">g</option>
+                <option value="1">e</option>
+                <option value="0">b</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">stalk_shape</label>
+            <select class="text" name="stalk_shape" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="1">t</option>
+                <option value="0">e</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">stalk_root</label>
+            <select class="text" name="stalk_root" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="4">r</option>
+                <option value="3">e</option>
+                <option value="2">c</option>
+                <option value="1">b</option>
+                <option value="0">?</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">stalk_surface_above_ring</label>
+            <select class="text" name="stalk_surface_above_ring" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="3">y</option>
+                <option value="2">s</option>
+                <option value="1">k</option>
+                <option value="0">f</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">stalk_surface_below_ring</label>
+            <select class="text" name="stalk_surface_below_ring" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="3">y</option>
+                <option value="2">s</option>
+                <option value="1">k</option>
+                <option value="0">f</option>
+
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">stalk_color_above_ring</label>
+            <select class="text" name="stalk_color_above_ring" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="8">y</option>
+                <option value="7">w</option>
+                <option value="6">p</option>
+                <option value="5">o</option>
+                <option value="4">n</option>
+                <option value="3">g</option>
+                <option value="2">e</option>
+                <option value="1">c</option>
+                <option value="0">b</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">stalk_color_below_ring</label>
+            <select class="text" name="stalk_color_below_ring" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="8">y</option>
+                <option value="7">w</option>
+                <option value="6">p</option>
+                <option value="5">o</option>
+                <option value="4">n</option>
+                <option value="3">g</option>
+                <option value="2">e</option>
+                <option value="1">c</option>
+                <option value="0">b</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">veil_type</label>
+            <select class="text" name="veil_type" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="0">p</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">veil_color</label>
+            <select class="text" name="veil_color" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="3">y</option>
+                <option value="2">w</option>
+                <option value="1">o</option>
+                <option value="0">n</option>
+
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">ring_number</label>
+            <select class="text" name="ring_number" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="2">t</option>
+                <option value="0">o</option>
+                <option value="0">n</option>
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">ring_type</label>
+            <select class="text" name="ring_type" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="4">p</option>
+                <option value="3">n</option>
+                <option value="2">l</option>
+                <option value="1">f</option>
+                <option value="0">e</option>
+
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">spore_print_color</label>
+            <select class="text" name="spore_print_color" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="8">y</option>
+                <option value="7">w</option>
+                <option value="6">u</option>
+                <option value="5">r</option>
+                <option value="4">o</option>
+                <option value="3">n</option>
+                <option value="2">k</option>
+                <option value="1">h</option>
+                <option value="0">b</option>
+
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">population</label>
+            <select class="text" name="population" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="5">y</option>
+                <option value="4">v</option>
+                <option value="3">s</option>
+                <option value="2">n</option>
+                <option value="1">c</option>
+                <option value="0">a</option>
+
+        </select><br><br>
+
+            <label style="font-size:large;background-color:tomato(248, 89, 248); padding:3px 13px; margin: 10px 4px 17px 4px;">habitat</label>
+            <select class="text" name="habitat" style="padding: 4px 6px; font-size:15;">
+                <option value="text">select</option>
+                <option value="6">w</option>
+                <option value="5">u</option>
+                <option value="4">p</option>
+                <option value="3">m</option>
+                <option value="2">l</option>
+                <option value="1">g</option>
+                <option value="0">d</option>
+            </select><br><br>
+
+            <input type="submit" , style="background-color:tomato(248, 89, 248);padding:5px 12px; font-size: 15px;" value='Predict'> <br><br>
+            <input type="reset", style="background-color:tomato(248, 89, 248);padding:5px 12px; font-size: 15px;" value='Reset value'> <br><br>
+
+        </form>
+
+        </center>
+    </body>
+</html>
+
+
+
+
+
+
